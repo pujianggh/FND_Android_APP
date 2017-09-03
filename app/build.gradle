@@ -100,6 +100,10 @@ android {
 
     lintOptions {
         abortOnError false      //错误发生后停止gradle构建
+        checkReleaseBuilds true
+        xmlReport true
+        htmlReport false
+        xmlOutput file("$project.buildDir/outputs/lint-result.xml")
     }
 }
 
@@ -111,4 +115,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    //依赖结合主Module
+    compile project(":commonlibrary")
+
 }

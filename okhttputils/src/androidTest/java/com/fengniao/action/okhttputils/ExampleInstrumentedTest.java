@@ -1,4 +1,4 @@
-package com.fengniao.action;
+package com.fengniao.action.okhttputils;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.fengniao.action", appContext.getPackageName());
+        assertEquals("com.fengniao.action.okhttputils.test", appContext.getPackageName());
     }
 }
