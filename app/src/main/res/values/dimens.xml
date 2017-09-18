@@ -1,0 +1,65 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- 通用-间距值 -->
+    <dimen name="spacing_min">5dp</dimen>
+    <dimen name="spacing_normal">10dp</dimen>
+    <dimen name="spacing_normalplus">15dp</dimen>
+    <dimen name="spacing_larger">20dp</dimen>
+    <dimen name="spacing_max">30dp</dimen>
+    <dimen name="spacing_maxplus">50dp</dimen>
+    <dimen name="spacing_eight">8dp</dimen>
+
+    <!-- 通用-组件值 -->
+    <dimen name="viewpager_title_height">60dp</dimen>
+    <dimen name="title_height">50dp</dimen>
+    <dimen name="title_height2">49dp</dimen>
+    <dimen name="bottom_height">61dp</dimen>
+    <dimen name="edittext_min">35dp</dimen>
+    <dimen name="button_height">45dp</dimen>
+    <dimen name="button_height_normal">35dp</dimen>
+    <dimen name="button_width">180dp</dimen>
+    <dimen name="button_width1">100dp</dimen>
+    <dimen name="list_height">45dp</dimen>
+
+    <!-- 通用-文字常用大小值 -->
+    <dimen name="textsize_huge">40sp</dimen>
+    <dimen name="textsize_little">14sp</dimen>
+    <dimen name="textsize_title">20sp</dimen>
+    <dimen name="textsize_large">25sp</dimen>
+    <dimen name="textsize_large_title">30sp</dimen>
+    <dimen name="textsize_content">16sp</dimen>
+    <dimen name="textsize_min">12sp</dimen>
+    <dimen name="textsize_bottom">12sp</dimen>
+    <dimen name="textsize_small">16sp</dimen>
+    <dimen name="textsize_normal">15sp</dimen>
+    <dimen name="textsize_normalplus">14sp</dimen>
+    <dimen name="textsize_supersmall">10sp</dimen>
+    <dimen name="textsize_seckilltitle">28sp</dimen>
+    <dimen name="textsize_countdown">10sp</dimen>
+
+    <!-- 文本大小 -->
+    <dimen name="text_size_100">50sp</dimen>
+    <dimen name="text_size_80">40sp</dimen>
+    <dimen name="text_size_40">20sp</dimen>
+    <dimen name="text_size_36">18sp</dimen>
+    <dimen name="text_size_32">16sp</dimen>
+    <dimen name="text_size_30">15sp</dimen>
+    <dimen name="text_size_28">14sp</dimen>
+    <dimen name="text_size_26">13sp</dimen>
+    <dimen name="text_size_24">12sp</dimen>
+    <dimen name="text_size_22">11sp</dimen>
+    <dimen name="text_size_20">10sp</dimen>
+    <dimen name="text_size_18">9sp</dimen>
+
+    <dimen name="item_vertical_24">12dp</dimen>
+    <dimen name="item_vertical_50">25dp</dimen>
+    <dimen name="item_vertical_60">30dp</dimen>
+    <dimen name="item_vertical_70">35dp</dimen>
+    <dimen name="item_vertical_80">40dp</dimen>
+    <dimen name="item_vertical_88">44dp</dimen>
+    <dimen name="item_vertical_90">45dp</dimen>
+    <dimen name="item_vertical_100">50dp</dimen>
+    <dimen name="item_vertical_120">60dp</dimen>
+    <dimen name="item_vertical_160">80dp</dimen>
+
+</resources>

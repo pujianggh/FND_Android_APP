@@ -43,6 +43,7 @@ public class ChannelInfoUitls {
             }
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
+            LogAPPUtils.e("getChannelNameApplication->"+e.getStackTrace());
         }
         return channelName;
     }
@@ -71,6 +72,7 @@ public class ChannelInfoUitls {
             }
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
+            LogAPPUtils.e("getChannelNameActivity->"+e.getStackTrace());
         }
         return channelName;
     }

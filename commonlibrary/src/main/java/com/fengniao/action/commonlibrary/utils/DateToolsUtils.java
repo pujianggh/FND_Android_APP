@@ -43,6 +43,7 @@ public class DateToolsUtils {
             }
         } catch (NumberFormatException e) {
             e.printStackTrace();
+            LogAPPUtils.e("getFormatTime->"+e.getStackTrace());
         }
         return str;
     }
@@ -76,6 +77,7 @@ public class DateToolsUtils {
             }
         } catch (NumberFormatException e) {
             e.printStackTrace();
+            LogAPPUtils.e("getShowTime->"+e.getStackTrace());
         }
         return str;
     }

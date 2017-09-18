@@ -1,6 +1,8 @@
 package com.fengniao.action.commonlibrary.utils;
 
+import android.os.Environment;
 import android.text.TextUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -14,6 +16,19 @@ import java.io.RandomAccessFile;
  * @Description:
  */
 public class FileUtils {
+
+    /**
+     * 首先默认缓存文件路径,保存到SD卡
+     *
+     * @return
+     */
+    public static String getCachePath(){
+        if (Environment.getExternalStorageState().equalsIgnoreCase(Environment.MEDIA_MOUNTED)){
+            return Environment.getExternalStorageDirectory().getAbsolutePath();
+        }else {
+            return "/mnt/sdcard";
+        }
+    }
 
     /**
      * 将字符串写入到文本文件中
@@ -40,6 +55,7 @@ public class FileUtils {
             raf.write(strContent.getBytes());
         } catch (Exception e) {
             e.getStackTrace();
+            LogAPPUtils.e("writeTxtToFile->"+e.getStackTrace());
         }finally {
             if(raf!=null){
                 try {
@@ -68,6 +84,7 @@ public class FileUtils {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            LogAPPUtils.e("makeFilePath->"+e.getStackTrace());
         }
         return file;
     }
@@ -86,6 +103,7 @@ public class FileUtils {
             }
         } catch (Exception e) {
             e.getStackTrace();
+            LogAPPUtils.e("makeRootDirectory->"+e.getStackTrace());
         }
     }
 

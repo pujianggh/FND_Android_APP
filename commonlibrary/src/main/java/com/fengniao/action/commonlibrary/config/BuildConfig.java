@@ -1,5 +1,7 @@
 package com.fengniao.action.commonlibrary.config;
 
+import com.fengniao.action.commonlibrary.utils.FileUtils;
+
 /**
  * 生产环境配置config
  *
@@ -13,4 +15,9 @@ public final class BuildConfig {
     public static final boolean DEBUG = true;
     //主要用于日志打印Tag标记
     public static final String TAG_DEBUG = "pj";
+    //SharedPreferences保存名字
+    public static final String SHARED_PREFERENCE_NAME = "sharepreferences_iData";
+    //文件保存的确切位置
+    public static final String CACHE_REAL_PATH = FileUtils.getCachePath() + "/fnd_cache";
+
 }

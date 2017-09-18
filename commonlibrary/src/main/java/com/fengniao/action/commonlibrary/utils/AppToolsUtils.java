@@ -40,6 +40,7 @@ public class AppToolsUtils {
                 }
             }
         } catch (Exception e) {
+            LogAPPUtils.e("getHostIp->"+e.getStackTrace());
         }
         return "";
     }
@@ -64,7 +65,7 @@ public class AppToolsUtils {
                 return result;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LogAPPUtils.e("getDeviceId->"+e.getStackTrace());
             return "";
         }
     }
