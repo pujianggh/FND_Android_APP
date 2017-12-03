@@ -48,7 +48,7 @@ public class MeasureUtils {
     }
 
     /**
-     * px(像素)转成dip
+     * px(像素)转成sp
      */
     public static int px2sp(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().scaledDensity;

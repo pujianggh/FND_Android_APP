@@ -3,11 +3,10 @@ apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
+    buildToolsVersion "26.0.2"
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 23
+        minSdkVersion 14
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -23,14 +22,13 @@ android {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.1.0'
-
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.squareup.okio:okio:1.9.0'
-    compile 'com.tsy:PersistentCookieJar:1.0.0'
+    //testimplementation 'junit:junit:4.12'
+    api 'com.android.support:appcompat-v7:25.1.0'
+    api 'com.squareup.okhttp3:okhttp:3.4.1'
+    api 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    api 'com.google.code.gson:gson:2.7'
+    api 'com.squareup.okio:okio:1.9.0'
+    api 'com.tsy:PersistentCookieJar:1.0.0'
 }
 
 publish {

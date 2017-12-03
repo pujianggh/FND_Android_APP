@@ -20,7 +20,6 @@ import java.util.Enumeration;
  */
 public class AppToolsUtils {
 
-
     /**
      * 获取IP
      *

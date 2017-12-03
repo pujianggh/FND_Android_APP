@@ -5,19 +5,19 @@ android {
         debugConfig {
             keyAlias 'fengniao123'
             keyPassword 'fengniao123'
-            storeFile file('/Users/pujiang/WorkSpace/fnd_android/fengniao_android/app/fengniao_keystore.jks')
+            storeFile file('/Users/pujiang/Tools/KEY/fengniao_keystore.jks')
             storePassword 'fengniao123'
         }
 
         release {
             keyAlias 'fengniao123'
             keyPassword 'fengniao123'
-            storeFile file('/Users/pujiang/WorkSpace/fnd_android/fengniao_android/app/fengniao_keystore.jks')
+            storeFile file('/Users/pujiang/Tools/KEY/fengniao_keystore.jks')
             storePassword 'fengniao123'
         }
     }
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.fengniao.action"
         minSdkVersion 14
@@ -29,7 +29,7 @@ android {
         resConfigs "zh"
         signingConfig signingConfigs.release
         ndk {
-            abiFilters  "armeabi-v7a"  // 指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,armeabi,arm-v8之类的so会被过滤掉)
+            abiFilters "armeabi-v7a","x86","armeabi"  // 指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,armeabi,arm-v8之类的so会被过滤掉)
         }
     }
     buildTypes {
@@ -42,12 +42,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             // 自定义输出配置
             applicationVariants.all { variant ->
-                variant.outputs.each { output ->
+                variant.outputs.all { output ->
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         // 输出apk名称为fengniaodai_v1.0_wandoujia.apk
-                        def fileName = "fengniaodai_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
+                        outputFileName = "fengniaodai_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
                     }
                 }
             }
@@ -58,7 +57,7 @@ android {
             minifyEnabled false                                // 是否混淆处理
             zipAlignEnabled false                              // Zipalign优化
             shrinkResources false                              // 去掉无用资源
-            signingConfig signingConfigs.debug                 // 签名配置
+            signingConfig signingConfigs.release                 // 签名配置
         }
     }
 
@@ -68,35 +67,39 @@ android {
         }
     }
 
+    flavorDimensions "fnd"
     productFlavors {
         QQ {
+            dimension "fnd"
             manifestPlaceholders = [APP_NAME         : "飞鸟贷",
                                     APP_CHANNEL_VALUE: "QQ"]
         }
         xiaomi {
+            dimension "fnd"
             manifestPlaceholders = [APP_NAME         : "飞鸟贷",
                                     APP_CHANNEL_VALUE: "xiaomi"]
         }
         oppo {
+            dimension "fnd"
             manifestPlaceholders = [APP_NAME         : "飞鸟贷",
                                     APP_CHANNEL_VALUE: "oppo"]
         }
         huawei {
+            dimension "fnd"
             manifestPlaceholders = [APP_NAME         : "飞鸟贷",
                                     APP_CHANNEL_VALUE: "huawei"]
         }
         wandoujia {
+            dimension "fnd"
             manifestPlaceholders = [APP_NAME         : "飞鸟贷",
                                     APP_CHANNEL_VALUE: "wandoujia"]
         }
         alibaba {
+            dimension "fnd"
             manifestPlaceholders = [APP_NAME         : "飞鸟贷",
                                     APP_CHANNEL_VALUE: "alibaba"]
         }
     }
-    //productFlavors.all {
-    //    flavor -> flavor.manifestPlaceholders = [FND_CHANNEL_VALUE: name]
-    //}
 
     lintOptions {
         abortOnError false      //错误发生后停止gradle构建
@@ -108,14 +111,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
     //依赖结合主Module
-    compile project(":commonlibrary")
-
+    implementation project(':commonlibrary')
 }
